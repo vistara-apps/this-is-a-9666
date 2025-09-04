@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react'
 import OpenAI from 'openai'
 import { dbHelpers } from '../lib/supabase'
 import { useAuth } from './AuthContext'
+import { config } from '../config/env'
 
 const AdGenerationContext = createContext({})
 
@@ -16,8 +17,8 @@ export function AdGenerationProvider({ children }) {
 
   // Initialize OpenAI
   const openai = new OpenAI({
-    apiKey: import.meta.env.VITE_OPENAI_API_KEY || 'your-api-key-here',
-    baseURL: "https://openrouter.ai/api/v1",
+    apiKey: config.openai.apiKey,
+    baseURL: config.openai.baseURL,
     dangerouslyAllowBrowser: true,
   })
 

@@ -1,9 +1,7 @@
 import { createClient } from '@supabase/supabase-js'
+import { config } from '../config/env'
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://your-project.supabase.co'
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'your-anon-key'
-
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+export const supabase = createClient(config.supabase.url, config.supabase.anonKey)
 
 // Database table schemas based on PRD data model
 export const TABLES = {
