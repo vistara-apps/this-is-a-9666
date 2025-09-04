@@ -6,6 +6,7 @@ import LoginPage from './pages/LoginPage'
 import Dashboard from './pages/Dashboard'
 import GenerationPage from './pages/GenerationPage'
 import AnalyticsPage from './pages/AnalyticsPage'
+import SettingsPage from './pages/SettingsPage'
 import Sidebar from './components/Sidebar'
 import Header from './components/Header'
 
@@ -34,6 +35,7 @@ function AppContent() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/generate" element={<GenerationPage />} />
             <Route path="/analytics" element={<AnalyticsPage />} />
+            <Route path="/settings" element={<SettingsPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
